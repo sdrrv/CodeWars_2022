@@ -4,6 +4,7 @@ class User:
         self.name = name
         self.email = email
         self.mobile = mobile
+        self.accounts = []
  
     def getName(self):
        return self.name
@@ -13,4 +14,7 @@ class User:
    
     def getMobile(self):
        return self.mobile
+
+   def getAccounts(self):
+       return self.accounts
    
