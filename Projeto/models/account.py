@@ -8,7 +8,7 @@ class Account:
         self.account_id = account_id
         self.location = location
         self.operations = []
-        self.continent
+        self.continent = self.selectContinent(location)
 
     def get_balance(self):
         return self.balance
@@ -36,8 +36,8 @@ class Account:
     def selectContinent(self, country_name):
         newCountry = ""
         if (country_name[0].isupper() is False):
-        newCountry+=country_name[0].upper()
-        newCountry+=country_name[1:]
+            newCountry+=country_name[0].upper()
+            newCountry+=country_name[1:]
         else:
             newCountry = country_name
         country_alpha2 = pc.country_name_to_country_alpha2(newCountry)
