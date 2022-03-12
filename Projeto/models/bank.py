@@ -80,6 +80,7 @@ class Bank:
     def getDate(self):
         return self.date.showDate()
 
-
+    def showDate(self):
+        print(self.date.showDate())
         
          

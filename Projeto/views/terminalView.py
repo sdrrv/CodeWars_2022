@@ -18,13 +18,13 @@ class Terminal:
             line = input("")
             commands = line.split(" ")
             if commands[0] == "1":
-                manageUsers()
+                self.manageUsers()
             if commands[0] == "2":
-                manageAccounts()
+                self.manageAccounts()
             if commands[0] == "3":
-                manageTransactions()
+                self.manageTransactions()
             if commands[0] == "4":
-                manageOperations()
+                self.manageOperations()
             if commands[0] == "5":
                 return
 
@@ -95,7 +95,7 @@ class Terminal:
             exit(0)
 
     def showDate(self):
-        self.bank.getDate()
+        self.bank.showDate()
 
     def manageOperations(self):
         print("Select one operation")
