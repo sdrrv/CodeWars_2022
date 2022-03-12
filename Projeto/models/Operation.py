@@ -15,14 +15,11 @@ class Operation:
     def getDate(self):
         return self.date
 
-    def getName(self):
-        pass
-
 class Transaction(Operation):
     def __init__(self, date, amount, src, dest):
         super().__init__(date, amount, src)
         self.destination = dest
-        self.name = "Transacao entre " + self.source.getName() + " e " + dest.getName() + "--- " + self.amount + \
+        self.name = "Transacao entre " + str(self.source.getName()) + " e " + str(dest.getName()) + "--- " + str(self.amount) + \
                     " - " + self.date.showDate()
 
     def getName(self):
@@ -31,7 +28,7 @@ class Transaction(Operation):
 class ServicePayment(Operation):
     def __init__(self, date, ammount, src):
         super().__init__(date, ammount, src)
-        self.name = "Pagamento de servico à Empresa " + random.randint(10000000, 99999999) + "--- " + self.amount + \
+        self.name = "Pagamento de servico à Empresa " + random.randint(10000000, 99999999) + "--- " + str(self.amount) + \
                     " - " + self.date.showDate()
     def getName(self):
             return self.name
@@ -39,7 +36,7 @@ class ServicePayment(Operation):
 class Deposit(Operation):
     def __init__(self, date, amount, src):
         super().__init__(date, amount, src)
-        self.name = "Deposito feito por " + self.source.getName() + " --- " + self.amount + \
+        self.name = "Deposito feito por " + self.source.getName() + " --- " + str(self.amount) + \
                     " - " + self.date.showDate()
 
     def getName(self):
@@ -49,7 +46,7 @@ class Deposit(Operation):
 class Withdraw(Operation):
     def __init__(self, date, amount, src):
         super().__init__(date, amount, src)
-        self.name = "Levantamento feito por " + self.source.getName() + "--- " + self.amount + \
+        self.name = "Levantamento feito por " + self.source.getName() + "--- " + str(self.amount) + \
                     "- na data " + self.date.showDate()
 
     def getName(self):

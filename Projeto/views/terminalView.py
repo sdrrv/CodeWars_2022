@@ -57,15 +57,22 @@ class Terminal:
             exit(0)
 
     def registerAccount(self):
-        balance = int(input("Enter account balance:"))
-        location = input("Enter account location:")
-        email = input("Enter your email:")
+        balance = int(input("Enter account balance: "))
+        location = input("Enter account location: ")
+        email = input("Enter your email: ")
         self.bank.createAccount(balance, location, email)
         self.manageAccounts()
 
     def showAccount(self):
         id = int(input("Get account id: "))
         print(self.bank.getAccountinfo(id))
+        self.manageAccounts()
+
+    def showAccountOperations(self):
+        id = int(input("Get account id: "))
+        lst = self.bank.getOperations(id)
+        for i in lst:
+            print(i.getName())
         self.manageAccounts()
 
     def manageAccounts(self):
@@ -81,11 +88,19 @@ class Terminal:
         if (option == "2"):
             self.showAccount()
         if (option == "3"):
-            self.showAccountTransactions()
+            self.showAccountOperations()
         if (option == "4"):
             self.mainLoop()
         if (option == "5"):
             exit(0)
+
+    def transferMoney(self):
+        id = int(input("Get source account id: "))
+        id2 = int(input("Get destination account id: "))
+        money = int(input("Get amount to transfer: "))
+        self.bank.registerTransaction(id, id2, money)
+        print("Sucsseful transaction")
+        self.manageTransactions()
 
     def manageTransactions(self):
         print("Select one operation")

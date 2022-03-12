@@ -16,8 +16,14 @@ class Account:
         string = "Premium" if self.premium else "Normal"
         return "Conta " + string + " com id " + str(self.getAccountId()) + " do utilizador " + str(self.getUser().getName()) + " com balanco " + str(self.getBalance()) + "€ localizada em " + str(self.get_location())
     
+    def getName(self):
+        return str(self.account_id)
+
     def getUser(self):
         return self.user
+
+    def getStatus(self):
+        return self.premium
     
     def getContinent(self):
         return self.continent
