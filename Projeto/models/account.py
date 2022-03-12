@@ -9,12 +9,17 @@ class Account:
         self.location = location
         self.operations = []
         self.continent = self.selectContinent(location)
+        self.premium = True if balance >= 5000 else False 
 
     def get_balance(self):
         return self.balance
 
     def get_accountId(self):
         return self.account_id
+    
+    def setBalance(self, newBalance):
+        self.balance = newBalance
+        self.premium = True if self.balance >= 5000 else False
 
     def get_location(self):
         return self.location
