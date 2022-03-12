@@ -22,7 +22,8 @@ class Transaction(Operation):
                     ", na data " + self.date.showDate()
 
 class ServicePayment(Operation):
-    def __init__(self):
+    def __init__(self, date, ammount, src):
+        super().__init__(date, amount, src)
         self.name = "Pagamento de servico à Empresa " + random.randint(10000000, 99999999) + "no valor de " + self.amount + \
                     ", na data " + self.date.showDate()
 
