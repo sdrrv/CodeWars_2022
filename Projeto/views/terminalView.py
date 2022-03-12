@@ -102,6 +102,13 @@ class Terminal:
         print("Sucsseful transaction")
         self.manageTransactions()
 
+    def payServices(self):
+        id = int(input("Get account id: "))
+        money = int(input("Get amount to transfer: "))
+        self.bank.registerServicePayment(id, money)
+        print("Sucsseful transaction")
+        self.manageTransactions()
+
     def manageTransactions(self):
         print("Select one operation")
         print("1. Transfer money")

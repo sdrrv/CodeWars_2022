@@ -16,7 +16,7 @@ class Bank:
         return date
 
     def increaseDate(self, amount):
-        self.date.setDay(date.getDay() + amount)
+        self.date.increaseDay(amount)
     
     def getUsers(self):
         return self.users
@@ -64,8 +64,8 @@ class Bank:
         op = Transaction(self.date, amount, self.accounts[IdSrc], self.accounts[IdDest])
         self.accounts[IdSrc].addOperation(op)
         self.accounts[IdDest].addOperation(op)
-        self.accounts[IdSrc].setBalance(self.accounts[IdSrc] - amount)
-        self.accounts[IdSrc].setBalance(self.accounts[IdDest] + ammount)
+        self.accounts[IdSrc].setBalance(self.accounts[IdSrc].balance - amount)
+        self.accounts[IdDest].setBalance(self.accounts[IdDest].balance + ammount)
         self.increaseDate(1)
     
     def registerDeposit(self, IdSrc, ammount):
@@ -92,7 +92,7 @@ class Bank:
             return -1
         op = ServicePayment(self.date, ammount, self.accounts[IdSrc])
         self.accounts[IdSrc].addOperation(op)
-        self.accounts[IdSrc].setBalance(self.accounts[IdSrc] - ammount)
+        self.accounts[IdSrc].setBalance(self.accounts[IdSrc].balance - ammount)
         self.increaseDate(1)
 
     def getAccountBalanceEuros(self, accountId):
