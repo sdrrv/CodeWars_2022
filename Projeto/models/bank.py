@@ -1,5 +1,5 @@
 from datetime import date
-from Projeto.models import user
+from models import user
 from models.Operation import Operation, Transaction
 from models.account import Account
 from models.date import Date

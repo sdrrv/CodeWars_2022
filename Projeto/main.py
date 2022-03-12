@@ -1,5 +1,4 @@
 from views.terminalView import Terminal
-from views.website import create_app
 from models.bank import Bank
 
 
