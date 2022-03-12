@@ -41,6 +41,7 @@ class Bank:
         user.createAccount(newAccount)
         self.accounts[self.idCount-1]=newAccount
         print("O id da sua conta é: " + str(self.idCount-1))
+        return newAccount.getAccountId()
     
     def isPremium(self, account):
         pass
