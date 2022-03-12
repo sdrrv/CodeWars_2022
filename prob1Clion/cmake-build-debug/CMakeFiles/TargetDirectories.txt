@@ -1,3 +1,0 @@
-/Users/duartecelvas/Desktop/Main/Tecas/codeWars/CodeWars_2022/prob1Clion/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/duartecelvas/Desktop/Main/Tecas/codeWars/CodeWars_2022/prob1Clion/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/duartecelvas/Desktop/Main/Tecas/codeWars/CodeWars_2022/prob1Clion/cmake-build-debug/CMakeFiles/prob1Clion.dir
