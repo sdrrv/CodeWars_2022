@@ -1,0 +1,228 @@
+{% extends "base.html" %}
+{% block title %} Login {% endblock title %}
+
+
+
+{% block content %}
+
+{% if auth == False %}
+<form method="POST" align ="center">
+    <br>
+    <h3 align = "center">Autentification</h3>
+    <div class = "form-group">
+        <label for ="password">Password</label>
+        <input type="password" class="form-control" id ="password" name ="password" placeholder="Enter the password" required>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Enter</button>
+
+</form>
+{% else %}
+<br>
+<form method="post">
+    <div class = "container">
+        <h1 class ="font-monospace" align = "center">Inicio</h1>
+            <div class ="row">
+                <div class = "form-group">
+                    <label for ="tema">Tema da celebração</label>
+                    <input type="text" class="form-control" id ="tema" name ="tema" placeholder="Paz" required>
+                </div> 
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class = "form-group">
+                        <label for ="cantico_inicial">Cantico Inicial</label>
+                        <input type="text" class="form-control" id ="cantico_inicial" name ="cantico_inicial" placeholder="Vem o Senhor vestido de Magestade" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class = "form-group">
+                        <label for ="cantico_inicial_por">Cantado por</label>
+                        <input type="text" class="form-control" id ="cantico_inical_por" name ="cantico_inicial_por" placeholder="Francisco" required>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <br>
+    <hr class="divider">
+    <br>
+
+    <div class="container">
+        <h1 class ="font-monospace" align = "center">1º Leitura</h1>
+        <div class ="row">
+            <div class = "form-group">
+                <label for ="leitura_1">Leitura</label>
+                <input type="text" class="form-control" id ="leitura_1" name ="leitura_1" placeholder="Ex 12, 5-8" required>
+            </div> 
+        </div>
+        <div class="row">
+            <div class = "form-group">
+                <label for ="adm_1">Admonição</label>
+                <input type="text" class="form-control" id ="adm_1" name ="adm_1" placeholder="Inês" required>
+            </div>
+            <div class = "form-group">
+                <label for ="procl_1">Proclamação</label>
+                <input type="text" class="form-control" id ="procl_1" name ="procl_1" placeholder="Francisco" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class = "form-group">
+                    <label for ="cantico_1">Cântico</label>
+                    <input type="text" class="form-control" id ="cantico_1" name ="cantico_1" placeholder="Inês" required>
+                </div>
+            </div>
+            <div class="col">
+                <div class = "form-group">
+                    <label for ="cantico_1_por">Cantado por</label>
+                    <input type="text" class="form-control" id ="cantico_1_por" name ="cantico_1_por" placeholder="Duarte" required>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <hr class="divider">
+    <br>
+
+    <div class="container">
+        <h1 class ="font-monospace" align = "center">2º Leitura</h1>
+        <div class ="row">
+            <div class = "form-group">
+                <label for ="tema">Leitura</label>
+                <input type="text" class="form-control" id ="leitura_2" name ="leitura_2" placeholder="Ex 12, 5-8" required>
+            </div> 
+        </div>
+        <div class="row">
+            <div class = "form-group">
+                <label for ="adm_2">Admonição</label>
+                <input type="text" class="form-control" id ="adm_2" name ="adm_2" placeholder="Inês" required>
+            </div>
+            <div class = "form-group">
+                <label for ="procl_2">Proclamação</label>
+                <input type="text" class="form-control" id ="procl_2" name ="procl_2" placeholder="Francisco" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class = "form-group">
+                    <label for ="cantico_2">Cântico</label>
+                    <input type="text" class="form-control" id ="cantico_2" name ="cantico_2" placeholder="Inês" required>
+                </div>
+            </div>
+            <div class="col">
+                <div class = "form-group">
+                    <label for ="cantico_2_por">Cantado por</label>
+                    <input type="text" class="form-control" id ="cantico_2_por" name ="cantico_2_por" placeholder="Duarte" required>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <hr class="divider">
+    <br>
+
+    <div class="container">
+        <h1 class ="font-monospace" align = "center">3º Leitura</h1>
+        <div class ="row">
+            <div class = "form-group">
+                <label for ="tema">Leitura</label>
+                <input type="text" class="form-control" id ="leitura_3" name ="leitura_3" placeholder="Ex 12, 5-8" required>
+            </div> 
+        </div>
+        <div class="row">
+            <div class = "form-group">
+                <label for ="adm_3">Admonição</label>
+                <input type="text" class="form-control" id ="adm_3" name ="adm_3" placeholder="Inês" required>
+            </div>
+            <div class = "form-group">
+                <label for ="procl_3">Proclamação</label>
+                <input type="text" class="form-control" id ="procl_3" name ="procl_3" placeholder="Francisco" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class = "form-group">
+                    <label for ="cantico_3">Cântico</label>
+                    <input type="text" class="form-control" id ="cantico_3" name ="cantico_3" placeholder="Inês" required>
+                </div>
+            </div>
+            <div class="col">
+                <div class = "form-group">
+                    <label for ="cantico_3_por">Cantado por</label>
+                    <input type="text" class="form-control" id ="cantico_3_por" name ="cantico_3_por" placeholder="Duarte" required>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <hr class="divider">
+    <br>
+
+    <div class="container">
+        <h1 class ="font-monospace" align = "center">Evangelho</h1>
+        <div class ="row">
+            <div class = "form-group">
+                <label for ="tema">Leitura</label>
+                <input type="text" class="form-control" id ="leitura_4" name ="leitura_4" placeholder="Ex 12, 5-8" required>
+            </div> 
+        </div>
+        <div class="row">
+            <div class = "form-group">
+                <label for ="adm_4">Admonição</label>
+                <input type="text" class="form-control" id ="adm_4" name ="adm_4" placeholder="Inês" required>
+            </div>
+            <div class = "form-group">
+                <label for ="procl_4">Proclamação</label>
+                <input type="text" class="form-control" id ="procl_4" name ="procl_4" placeholder="Responsável" required>
+            </div>
+        </div> 
+    </div>
+
+    <br>
+    <hr class="divider">
+    <br>
+    
+    <h1 class ="font-monospace" align = "center">Final</h1>
+    <div class="row">
+        <div class="col">
+            <div class = "form-group">
+                <label for ="cantico_final">Cantico Final</label>
+                <input type="text" class="form-control" id ="cantico_final" name ="cantico_final" placeholder="Vem o Senhor vestido de Magestade" required>
+            </div>
+        </div>
+        <div class="col">
+            <div class = "form-group">
+                <label for ="cantico_final_por">Cantado por</label>
+                <input type="text" class="form-control" id ="cantico_final_por" name ="cantico_final_por" placeholder="Francisco" required>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    {% if submiting == True %}
+        <button class="btn btn-primary" type="submit" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            <span class="visually-hidden"></span>
+            Loading...
+        </button>
+    {% else %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    {% endif %}
+    <br>
+</form>
+
+
+{% endif %}
+
+
+
+{% endblock content %}
+

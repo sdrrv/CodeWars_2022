@@ -4,7 +4,7 @@ class User:
         self.name = name
         self.email = email
         self.mobile = mobile
-        
+ 
     def getName(self):
        return self.name
    
