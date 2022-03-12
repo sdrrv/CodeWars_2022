@@ -1,26 +1,26 @@
+import datetime
+
 class Date:
     def __init__(self, day, month, year):
-        self.day = day
-        self.month = month
-        self.year = year
+        self.date = datetime.datetime(year, month, day)
 
     def getDay(self):
-        return self.day
+        return self.date.day
 
     def getMonth(self):
-        return self.month
+        return self.date.month
 
     def getYear(self):
-        return self.year
+        return self.date.year
 
-    def setDay(self, day):
-        self.day = day
+    def increaseDay(self, amount):
+        self.date+= datetime.timedelta(days=amount)
 
-    def setMonth(self, month):
-        self.month = month
+    def increaseMonth(self, amount):
+        self.date += datetime.timedelta(months = amount)
 
-    def setYear(self, year):
-        self.year = year
+    def increaseYear(self, amount):
+        self.year += datetime.timedelta(years = amount) 
 
     def showDate(self):
         return "[" + self.year + "/" + self.month + "/" + self.day + "]"
