@@ -1,6 +1,6 @@
 from datetime import date
-from Projeto.models import user
-from models.Operation import Operation, Transaction
+from models import user
+from models.Operation import Operation, Transaction, Deposit, Withdraw
 from models.account import Account
 from models.date import Date
 from models.user import User
@@ -62,6 +62,18 @@ class Bank:
         self.accounts[IdDest].addOperation(op)
         self.accounts[IdSrc].setBalance(self.accounts[IdSrc] - amount)
         self.accounts[IdSrc].setBalance(self.accounts[IdDest] + ammount)
+        self.increaseDate(1)
+    
+    def registerDeposit(self, IdSrc, ammount):
+        accountIds = self.accounts.keys()
+        if IdSrc not in accountIds:
+            return -1
+        op = Desposit(self.date, ammount, self.accounts[IdSrc])
+        self.accounts[IdSrc].addOperation(op)
+        self.accounts[IdDest].addOperation(op)
+        self.accounts[IdSrc].setBalance(self.accounts[IdSrc] - amount)
+        self.accounts[IdSrc].setBalance(self.accounts[IdDest] + ammount)
+        self.increaseDate(1)
 
     def getAccountBalanceEuros(self, accountId):
         account = self.accounts[accountId]
@@ -75,10 +87,13 @@ class Bank:
         return self.accounts[accountId].toString
     
     def getUserinfo(self, userEmail):
-        pass
+        return self.users[userEmail].toString()
 
     def getDate(self):
         return self.date.showDate()
+    
+    def getOperations(self, accountId):
+        return self.accounts[accountId].getOperations()
 
 
         
