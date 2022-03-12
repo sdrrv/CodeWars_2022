@@ -13,14 +13,14 @@ class Date:
     def getYear(self):
         return self.year
 
-    def setDay(Day):
-        self.day = Day
+    def setDay(self, day):
+        self.day = day
 
-    def setMonth(Month):
-        self.month = Month
+    def setMonth(self, month):
+        self.month = month
 
-    def setYear(Year):
-        self.year = Year
+    def setYear(self, year):
+        self.year = year
 
     def showDate(self):
         return "[" + self.year + "/" + self.month + "/" + self.day + "]"
