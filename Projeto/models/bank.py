@@ -77,6 +77,9 @@ class Bank:
     def getUserinfo(self, userEmail):
         pass
 
+    def getDate(self):
+        return self.date.showDate()
+
 
         
          
