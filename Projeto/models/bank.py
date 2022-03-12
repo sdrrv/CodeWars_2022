@@ -1,9 +1,10 @@
 from datetime import date
 from models import user
-from models.Operation import Operation, Transaction, Deposit, Withdraw
+from models.Operation import *
 from models.account import Account
 from models.date import Date
 from models.user import User
+
 class Bank:
     def __init__(self):
         self.date = Date(2022,1,1)
@@ -68,11 +69,27 @@ class Bank:
         accountIds = self.accounts.keys()
         if IdSrc not in accountIds:
             return -1
-        op = Desposit(self.date, ammount, self.accounts[IdSrc])
+        op = Deposit(self.date, ammount, self.accounts[IdSrc])
         self.accounts[IdSrc].addOperation(op)
-        self.accounts[IdDest].addOperation(op)
-        self.accounts[IdSrc].setBalance(self.accounts[IdSrc] - amount)
-        self.accounts[IdSrc].setBalance(self.accounts[IdDest] + ammount)
+        self.accounts[IdSrc].setBalance(self.accounts[IdSrc] + ammount)
+        self.increaseDate(1)
+
+    def registerWithdraw(self, IdSrc, ammount):
+        accountIds = self.accounts.keys()
+        if IdSrc not in accountIds:
+            return -1
+        op = Withdraw(self.date, ammount, self.accounts[IdSrc])
+        self.accounts[IdSrc].addOperation(op)
+        self.accounts[IdSrc].setBalance(self.accounts[IdSrc] - ammount)
+        self.increaseDate(1)
+
+    def registerServicePayment(self, IdSrc, ammount):
+        accountIds = self.accounts.keys()
+        if IdSrc not in accountIds:
+            return -1
+        op = ServicePayment(self.date, ammount, self.accounts[IdSrc])
+        self.accounts[IdSrc].addOperation(op)
+        self.accounts[IdSrc].setBalance(self.accounts[IdSrc] - ammount)
         self.increaseDate(1)
 
     def getAccountBalanceEuros(self, accountId):
