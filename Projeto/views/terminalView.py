@@ -75,13 +75,29 @@ class Terminal:
             print(i.getName())
         self.manageAccounts()
 
+    def depositMoney(self):
+        id = int(input("Get account id: "))
+        money = int(input("Get amount to transfer: "))
+        self.bank.registerDeposit(id, money)
+        print("Sucsseful transaction")
+        self.manageAccounts()
+
+    def withdrawMoney(self):
+        id = int(input("Get account id: "))
+        money = int(input("Get amount to transfer: "))
+        self.bank.registerWithdraw(id, money)
+        print("Sucsseful transaction")
+        self.manageAccounts()
+
     def manageAccounts(self):
         print("Select one operation")
         print("1. Register Account")
         print("2. Show Account")
         print("3. Show Account Operations")
-        print("4. Go back")
-        print("5. Exit")
+        print("4. Deposit Money")
+        print("5. Withdraw money")
+        print("6. Go back")
+        print("7. Exit")
         option = input()
         if (option == "1"):
             self.registerAccount()
@@ -90,8 +106,12 @@ class Terminal:
         if (option == "3"):
             self.showAccountOperations()
         if (option == "4"):
-            self.mainLoop()
+            self.depositMoney()
         if (option == "5"):
+            self.withdrawMoney()
+        if (option == "6"):
+            self.mainLoop()
+        if (option == "7"):
             exit(0)
 
     def transferMoney(self):

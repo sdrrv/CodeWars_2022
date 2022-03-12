@@ -74,7 +74,7 @@ class Bank:
             return -1
         op = Deposit(self.date, ammount, self.accounts[IdSrc])
         self.accounts[IdSrc].addOperation(op)
-        self.accounts[IdSrc].setBalance(self.accounts[IdSrc] + ammount)
+        self.accounts[IdSrc].setBalance(self.accounts[IdSrc].balance + ammount)
         self.increaseDate(1)
 
     def registerWithdraw(self, IdSrc, ammount):
@@ -83,7 +83,7 @@ class Bank:
             return -1
         op = Withdraw(self.date, ammount, self.accounts[IdSrc])
         self.accounts[IdSrc].addOperation(op)
-        self.accounts[IdSrc].setBalance(self.accounts[IdSrc] - ammount)
+        self.accounts[IdSrc].setBalance(self.accounts[IdSrc].balance - ammount)
         self.increaseDate(1)
 
     def registerServicePayment(self, IdSrc, ammount):
