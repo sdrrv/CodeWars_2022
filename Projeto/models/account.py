@@ -3,18 +3,25 @@ from models.user import User
 import pycountry_convert as pc
 import random
 class Account:
-    def __init__(self,balance, account_id, location):
+    def __init__(self,balance, account_id, location, user):
+        self.user = user
         self.balance = balance
         self.account_id = account_id
         self.location = location
         self.operations = []
         self.continent = self.selectContinent(location)
         self.premium = True if balance >= 5000 else False 
+    
+    def getUser(self):
+        return self.user
 
-    def get_balance(self):
+    def getContinent(self):
+        return self.continent
+        
+    def getBalance(self):
         return self.balance
 
-    def get_accountId(self):
+    def getAccountId(self):
         return self.account_id
     
     def setBalance(self, newBalance):
