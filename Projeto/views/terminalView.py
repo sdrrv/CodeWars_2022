@@ -31,16 +31,16 @@ class Terminal:
     def showUserTransactions(self):
         print("a")
 
-    def showUser():
+    def showUser(self):
         print("b")
 
-    def registerUser(self.):
+    def registerUser(self):
         name = input("Enter your name:")
         email = input("Enter your email:")
         mobilenumber = input("Enter your mobile number:")
         self.bank.createUser(name, email, mobilenumber)
 
-    def manageUsers():
+    def manageUsers(self):
         print("Select one operation")
         print("1. Regist User")
         print("2. Show User")
@@ -55,11 +55,11 @@ class Terminal:
         if (option == "3"):
             showUserTransactions()
         if (option == "4"):
-            terminal()
+            self.mainLoop()
         if (option == "5"):
             exit(0)
 
-    def manageAccounts():
+    def manageAccounts(self):
         print("Select one operation")
         print("1. Register Account")
         print("2. Show Account")
@@ -74,11 +74,11 @@ class Terminal:
         if (option == "3"):
             showAccountTransactions()
         if (option == "4"):
-            terminal()
+            mainLoop
         if (option == "5"):
             exit(0)
 
-    def manageTransactions():
+    def manageTransactions(self):
         print("Select one operation")
         print("1. Transfer money")
         print("2. Pay services")
@@ -90,20 +90,23 @@ class Terminal:
         if (option == "2"):
             payServices()
         if (option == "3"):
-            terminal()
+            self.mainLoop()
         if (option == "4"):
             exit(0)
 
-    def manageOperations():
+    def showDate(self):
+        self.bank.getDate()
+
+    def manageOperations(self):
         print("Select one operation")
         print("1. Show Date")
         print("2. Go back")
         print("3. Exit")
         option = input()
         if (option == "1"):
-            showDate()
+            self.showDate()
         if (option == "2"):
-            terminal()
+            self.mainLoop()
         if (option == "3"):
             exit(0)
     
