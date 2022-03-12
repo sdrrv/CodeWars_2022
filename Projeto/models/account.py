@@ -18,7 +18,7 @@ class Account:
     
     def getUser(self):
         return self.user
-
+    
     def getContinent(self):
         return self.continent
         

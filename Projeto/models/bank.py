@@ -39,6 +39,7 @@ class Bank:
         newAccount = Account(balance, self.idCount, location, user)
         self.idCount += 1
         user.createAccount(newAccount)
+        return newAccount.getAccountId()
     
     def isPremium(self, account):
         pass
