@@ -1,2 +1,2 @@
 def terminal():
-    pass
+    print("O duarte é noob")
