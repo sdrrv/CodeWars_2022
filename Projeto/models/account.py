@@ -39,8 +39,7 @@ class Account:
 
 
 class Premium_account(Account):
-
-
+    pass
 
 
 
