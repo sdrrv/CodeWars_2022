@@ -1,6 +1,10 @@
+from random import random
+
 from models.date import Date
 from models.user import User
-class Operation():
+
+
+class Operation:
     def __init__(self, date, ammount, src):
         self.date = date
         self.amount = ammount
@@ -9,18 +13,28 @@ class Operation():
     def getAmount(self):
         return self.amount()
 
+
 class Transaction(Operation):
-    def __init__(self, dest):
+    def __init__(self, date, amount, src, dest):
+        super().__init__(date, amount, src)
         self.destination = dest
-        self.name = "TRANSACAO entre " + self.source.getName() + " e " + dest.getName() + "no valor de " + self.amount
+        self.name = "Transacao entre " + self.source.getName() + " e " + dest.getName() + "no valor de " + self.amount + \
+                    ", na data " + self.date.showDate()
 
 class ServicePayment(Operation):
     def __init__(self):
-        self.name = "Pagamento de servico à Empresa " + self.source.getName() + "no valor de " + self.amount
+        self.name = "Pagamento de servico à Empresa " + random.randint(10000000, 99999999) + "no valor de " + self.amount + \
+                    ", na data " + self.date.showDate()
 
 
 class Deposit(Operation):
-    def __init__(self):
-        self.name = "Deposito feito por " + self.source.getName() + "no valor de " + self.amount
+    def __init__(self, date, amount, src):
+        super().__init__(date, amount, src)
+        self.name = "Deposito feito por " + self.source.getName() + "no valor de " + self.amount + \
+                    ", na data " + self.date.showDate()
 
-class
+class Withdraw(Operation):
+    def __init__(self, date, amount, src):
+        super().__init__(date, amount, src)
+        self.name = "Levantamento feito por " + self.source.getName() + "no valor de " + self.amount + \
+                    ", na data " + self.date.showDate()
