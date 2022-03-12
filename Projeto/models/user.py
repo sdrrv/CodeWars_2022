@@ -15,6 +15,6 @@ class User:
     def getMobile(self):
        return self.mobile
 
-   def getAccounts(self):
+    def getAccounts(self):
        return self.accounts
    
