@@ -10,7 +10,7 @@ class Terminal:
         print("Select one option")
         print("1. Users")
         print("2. Accounts")
-        print("3. Transactions")
+        print("3. Operations")
         print("4. Others")
         print("5. Exit")
 
@@ -28,53 +28,53 @@ class Terminal:
             if commands[0] == "5":
                 return
 
-    def showUserTransactions(self):
-        print("a")
-
     def showUser(self):
-        print("b")
+        email = input("Enter your email:")
+        print(self.bank.getUserinfo(email))
+        self.manageUsers()
 
     def registerUser(self):
         name = input("Enter your name:")
         email = input("Enter your email:")
         mobilenumber = input("Enter your mobile number:")
         self.bank.createUser(name, email, mobilenumber)
+        self.manageUsers()
 
     def manageUsers(self):
         print("Select one operation")
         print("1. Regist User")
         print("2. Show User")
-        print("3. Show User Transactions")
-        print("4. Go Back")
-        print("5. Exit")
+        print("3. Go Back")
+        print("4. Exit")
         option = input()
         if (option == "1"):
-            registerUser()
+            self.registerUser()
         if (option == "2"):
-            showUser()
+            self.showUser()
         if (option == "3"):
-            showUserTransactions()
-        if (option == "4"):
             self.mainLoop()
-        if (option == "5"):
+        if (option == "4"):
             exit(0)
+
+    def registerAccount(self):
+        
 
     def manageAccounts(self):
         print("Select one operation")
         print("1. Register Account")
         print("2. Show Account")
-        print("3. Show Account Transactions")
+        print("3. Show Account Operations")
         print("4. Go back")
         print("5. Exit")
         option = input()
         if (option == "1"):
-            registerAccount()
+            self.registerAccount()
         if (option == "2"):
-            showAccount()
+            self.showAccount()
         if (option == "3"):
-            showAccountTransactions()
+            self.showAccountTransactions()
         if (option == "4"):
-            mainLoop
+            self.mainLoop()
         if (option == "5"):
             exit(0)
 
@@ -86,9 +86,9 @@ class Terminal:
         print("4. Exit")
         option = input()
         if (option == "1"):
-            transferMoney()
+            self.transferMoney()
         if (option == "2"):
-            payServices()
+            self.payServices()
         if (option == "3"):
             self.mainLoop()
         if (option == "4"):
