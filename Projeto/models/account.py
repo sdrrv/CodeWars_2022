@@ -14,7 +14,7 @@ class Account:
 
     def toString(self):
         string = "Premium" if self.premium else "Normal"
-        return "Conta " + string + " com id " + self.account_id + " do utilizador " + self.user.getName() + " com balanco " + self.balance + "€ localizada em " + self.location
+        return "Conta " + string + " com id " + str(self.getAccountId()) + " do utilizador " + str(self.getUser().getName()) + " com balanco " + str(self.getBalance()) + "€ localizada em " + str(self.get_location())
     
     def getUser(self):
         return self.user

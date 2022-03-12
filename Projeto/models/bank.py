@@ -39,6 +39,8 @@ class Bank:
         newAccount = Account(balance, self.idCount, location, user)
         self.idCount += 1
         user.createAccount(newAccount)
+        self.accounts[self.idCount-1]=newAccount
+        print("O id da sua conta é: " + str(self.idCount-1))
     
     def isPremium(self, account):
         pass
@@ -101,7 +103,7 @@ class Bank:
         return account.convertToDollars()
 
     def getAccountinfo(self, accountId):
-        return self.accounts[accountId].toString
+        return self.accounts[accountId].toString()
     
     def getUserinfo(self, userEmail):
         return self.users[userEmail].toString()

@@ -57,7 +57,16 @@ class Terminal:
             exit(0)
 
     def registerAccount(self):
-        
+        balance = int(input("Enter account balance:"))
+        location = input("Enter account location:")
+        email = input("Enter your email:")
+        self.bank.createAccount(balance, location, email)
+        self.manageAccounts()
+
+    def showAccount(self):
+        id = int(input("Get account id: "))
+        print(self.bank.getAccountinfo(id))
+        self.manageAccounts()
 
     def manageAccounts(self):
         print("Select one operation")
