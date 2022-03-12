@@ -112,6 +112,7 @@ class Bank:
     def getOperations(self, accountId):
         return self.accounts[accountId].getOperations()
 
-
+    def showDate(self):
+        print(self.date.showDate())
         
          

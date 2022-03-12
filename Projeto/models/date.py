@@ -23,7 +23,7 @@ class Date:
         self.year += datetime.timedelta(years = amount) 
 
     def showDate(self):
-        return "[" + self.getYear() + "/" + self.getMonth() + "/" + self.getDay() + "]"
+        return "[" + str(self.getYear()) + "/" + str(self.getMonth()) + "/" + str(self.getDay()) + "]"
 
     def equals(self, date):
         return self.getDay() == date.getDay() and self.getMonth() == date.getMonth() and self.getMonth() == self.getYear()
