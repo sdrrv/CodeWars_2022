@@ -26,6 +26,11 @@ class Account:
     def addOperation(self, operation):
         self.operations.append(operation)
 
+    def searchOperation(self, date):
+        for operation in self.operations:
+            if operation.getDate().equals(date):
+                return operation
+
 
 
 
