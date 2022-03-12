@@ -10,7 +10,11 @@ class Account:
         self.location = location
         self.operations = []
         self.continent = self.selectContinent(location)
-        self.premium = True if balance >= 5000 else False 
+        self.premium = True if balance >= 5000 else False
+
+    def toString(self):
+        string = "Premium" if self.premium else "Normal"
+        return "Conta " + string + " com id " + self.account_id + " do utilizador " + self.user.getName() + " com balanco " + self.balance + "€ localizada em " + self.location
     
     def getUser(self):
         return self.user
@@ -31,7 +35,7 @@ class Account:
     def get_location(self):
         return self.location
 
-    def get_operations(self):
+    def getOperations(self):
         return self.operations
 
     def convertToDollars(self):

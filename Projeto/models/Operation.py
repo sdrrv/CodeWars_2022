@@ -3,7 +3,6 @@ from random import random
 from models.date import Date
 from models.user import User
 
-
 class Operation:
     def __init__(self, date, ammount, src):
         self.date = date
@@ -19,13 +18,12 @@ class Operation:
     def getName(self):
         pass
 
-
 class Transaction(Operation):
     def __init__(self, date, amount, src, dest):
         super().__init__(date, amount, src)
         self.destination = dest
-        self.name = "Transacao entre " + self.source.getName() + " e " + dest.getName() + "no valor de " + self.amount + \
-                    ", na data " + self.date.showDate()
+        self.name = "Transacao entre " + self.source.getName() + " e " + dest.getName() + "--- " + self.amount + \
+                    " - " + self.date.showDate()
 
     def getName(self):
         return self.name
@@ -33,16 +31,16 @@ class Transaction(Operation):
 class ServicePayment(Operation):
     def __init__(self, date, ammount, src):
         super().__init__(date, ammount, src)
-        self.name = "Pagamento de servico à Empresa " + random.randint(10000000, 99999999) + "no valor de " + self.amount + \
-                    ", na data " + self.date.showDate()
+        self.name = "Pagamento de servico à Empresa " + random.randint(10000000, 99999999) + "--- " + self.amount + \
+                    " - " + self.date.showDate()
     def getName(self):
             return self.name
 
 class Deposit(Operation):
     def __init__(self, date, amount, src):
         super().__init__(date, amount, src)
-        self.name = "Deposito feito por " + self.source.getName() + "no valor de " + self.amount + \
-                    ", na data " + self.date.showDate()
+        self.name = "Deposito feito por " + self.source.getName() + " --- " + self.amount + \
+                    " - " + self.date.showDate()
 
     def getName(self):
             return self.name
@@ -51,8 +49,8 @@ class Deposit(Operation):
 class Withdraw(Operation):
     def __init__(self, date, amount, src):
         super().__init__(date, amount, src)
-        self.name = "Levantamento feito por " + self.source.getName() + "no valor de " + self.amount + \
-                    ", na data " + self.date.showDate()
-                    
+        self.name = "Levantamento feito por " + self.source.getName() + "--- " + self.amount + \
+                    "- na data " + self.date.showDate()
+
     def getName(self):
         return self.name                
