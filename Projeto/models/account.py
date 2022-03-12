@@ -8,7 +8,7 @@ class Account:
         self.account_id = account_id
         self.location = location
         self.operations = []
-        self.continent
+        self.continent = self.selectContinent(location)
 
     def get_balance(self):
         return self.balance

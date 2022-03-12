@@ -1,5 +1,12 @@
+from click import command
 from controllers import controller
 def terminal():
     while True:
-        x = input(":")
-        print(controller.adder(int(x), 2))
+        line = input(":")
+        if not line:
+            exit(0)
+        commands = line.split(" ")
+        if commands[0] == "createUser":
+            pass
+        
+        
