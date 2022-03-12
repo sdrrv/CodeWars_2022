@@ -23,6 +23,10 @@ class Account:
     def convertToDollars(self):
         return "{:.2f}".format(self.get_balance()*CONVERTION_EUR_DOLLAR)
 
+    def addOperation(self, operation):
+        self.operations.append(operation)
+
+
 
 
 

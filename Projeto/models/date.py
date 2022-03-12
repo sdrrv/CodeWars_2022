@@ -24,4 +24,3 @@ class Date:
 
     def showDate(self):
         return "[" + self.year + "/" + self.month + "/" + self.day + "]"
-
