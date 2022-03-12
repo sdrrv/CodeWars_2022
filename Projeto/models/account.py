@@ -1,5 +1,6 @@
 CONVERTION_EUR_DOLLAR = 1.09
 from models.user import User
+import pycountry_convert as pc
 import random
 class Account:
     def __init__(self,balance, account_id, location):
@@ -32,14 +33,17 @@ class Account:
             if operation.getDate().equals(date):
                 return operation
 
-
-
-
-
-
-
-class Premium_account(Account):
-    pass
+    def selectContinent(self, country_name):
+        newCountry = ""
+        if (country_name[0].isupper() is False):
+        newCountry+=country_name[0].upper()
+        newCountry+=country_name[1:]
+        else:
+            newCountry = country_name
+        country_alpha2 = pc.country_name_to_country_alpha2(newCountry)
+        country_continent_code = pc.country_alpha2_to_continent_code(country_alpha2)
+        country_continent_name = pc.convert_continent_code_to_continent_name(country_continent_code)
+        return country_continent_name
 
 
 
